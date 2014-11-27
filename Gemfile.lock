@@ -12,9 +12,12 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     builder (3.2.2)
+    clap (1.0.0)
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
+    cutest (1.2.2)
+      clap
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.9)
@@ -47,6 +50,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.4.0)
     slop (3.6.0)
     thread_safe (0.3.4)
     tzinfo (1.2.2)
@@ -61,6 +65,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cutest
   grape
   pry
   rack-test
+  rake
