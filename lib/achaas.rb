@@ -1,19 +1,25 @@
 require 'bundler/setup'
-require 'grape'
+require 'cuba'
 require 'achis'
+require 'json'
 
-class Achaas < Grape::API
-  version 'v1'
+Cuba.define do
+  on 'v1' do
+    on post do
+      json = JSON.parse req.body.read
 
-  resource :batches do
-    desc 'send transactions to some provider'
-    params do
-      requires :provider
-    end
-    post do
-      client = Achis::Providers::MockProvider.new
-      client.push( params['transactions'] )
-      'ok'
+      unless json['provider']
+        res.status = 400
+        res.finish
+      end
+
+      # send transactions to some provider
+      #
+      on 'batches' do
+        client = Achis::Providers::MockProvider.new
+        client.push( json['transactions'] )
+        res.write 'ok'
+      end
     end
   end
 end

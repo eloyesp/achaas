@@ -4,8 +4,6 @@ require 'achis/mock_connection'
 
 include Rack::Test::Methods
 
-I18n.enforce_available_locales = false
-
 prepare do
   header 'Content-Type', 'application/json'
 end
@@ -15,7 +13,7 @@ prepare do
 end
 
 def app
-  Achaas
+  Cuba
 end
 
 class Achis::Providers::MockProvider < Achis::Client

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'grape'
+gem 'cuba'
 gem 'pry'
 gem 'achis', path: '../achis'
 
