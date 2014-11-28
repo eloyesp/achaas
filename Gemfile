@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'grape'
 gem 'pry'
+gem 'achis', path: '../achis'
 
 group :development do
   gem 'rake'
