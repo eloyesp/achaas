@@ -7,7 +7,6 @@ def app
 end
 
 test 'POST /v1/transactions' do
-
   post '/v1/transactions', <<-JSON
     {
         "id": "FD00AFA8A0F7",
